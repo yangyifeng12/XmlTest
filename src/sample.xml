@@ -1,0 +1,8 @@
+<config>
+    <meta-def name="PDASD_dSADASD">
+        <field name="columns1" type="char" length="28" scale="4"/>
+        <field name="columns2" type="char" length="28" />
+        <field name="columns3" type="char" length="28" />
+        <field name="columns4" type="char" length="28" />
+    </meta-def>
+</config>
