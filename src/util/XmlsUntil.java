@@ -17,9 +17,9 @@ import java.util.Map;
 public class XmlsUntil {
 
     private static final Logger logger = Logger.getLogger(XmlsUntil.class);
-    public Map<String, String> getXmlsSql (String url,String fileNName){
+    public Map<String, String> getXmlsSql (String url,String fileName){
         SAXReader reader = new SAXReader();
-        String path =url+fileNName;
+        String path =url+fileName;
         File file = new File(path);
         Document document = null;
         Map<String, String> fields = new HashMap<>();
@@ -35,9 +35,8 @@ public class XmlsUntil {
                 String type =element.attributeValue("type");
                 String length =element.attributeValue("length");
                 String scale=element.attributeValue("scale");
-//                System.out.println("scale"+scale);
                 String field=type+"("+length;
-                if(scale==null||scale.equals("")){
+                if(scale==null||"".equals(scale)){
                     field+=")";
                     fields.put(name,field);
                 }else{
